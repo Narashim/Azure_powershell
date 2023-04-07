@@ -14,3 +14,11 @@ $storageaccount = New-AzStorageAccount -ResourceGroupName $rg_name -Name $accoun
 $storageaccount = Get-AzStorageAccount -ResourceGroupName $rg_name -Name $accountname -Permission Blob
 
 New-AzStorageContainer -name $ContainerName -context $storageaccount.Context -Permission Blob -debug
+
+
+# to List the storage
+Get-AzStorageAccount -ResourceGroupName $rg_name 
+
+#to drop the container 
+
+Remove-AzStorageAccount -Name $accountname -ResourceGroupName $rg_name 
